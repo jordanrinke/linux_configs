@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/jordan/.config/wpg/wallpapers/street_art_5-wallpaper-5120x2880.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#000000",
+        "foreground": "#dedede",
+        "cursor": "#dedede"
+    },
+    "colors": {
+        "color0": "#000000",
+        "color1": "#0d68a8",
+        "color2": "#9c3528",
+        "color3": "#f3b43a",
+        "color4": "#288e9c",
+        "color5": "#61bc3b",
+        "color6": "#744560",
+        "color7": "#a2a2a2",
+        "color8": "#616161",
+        "color9": "#0489e6",
+        "color10": "#d73a27",
+        "color11": "#fff037",
+        "color12": "#27c2d7",
+        "color13": "#77ff3c",
+        "color14": "#a24d7e",
+        "color15": "#dedede"
+    }
+}

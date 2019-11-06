@@ -1,0 +1,272 @@
+[colors]
+background = ${xrdb:color8:#414141}
+foreground = ${xrdb:color15:#cacaca}
+active = #cb5d5d
+inactive = #8c4040
+highlight = ${xrdb:color2:#719d72}
+error = ${xrdb:color9:#ff7575}
+
+[bar/tophider]
+monitor = Virtual1
+width = 100%
+height = 29
+background = #00000000
+modules-center = test
+
+[module/test]
+type = custom/text
+content = .
+
+
+
+
+[bar/top]
+wm-stack = i3
+override-redirect = true
+monitor = Virtual1
+width = 90%
+height = 24
+offset-x = 5%
+offset-y = 5
+radius = 0.0
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+label-line-color = ${colors.inactive}
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = AnonymicePowerline Nerd Font:fontformat=truetype:size=10;1
+font-1 = AnonymicePowerline Nerd Font:fontformat=truetype:size=22;1
+font-2 = FontAwesome:style=Regular:pixelsize=7
+
+
+modules-left = left-start-hide i3 xwindow left-stop
+modules-center = left-start date right-start
+modules-right =  right-stop filesystem right-stop-active eth right-start-active cpu right-start-hide
+
+tray-position = center
+tray-padding = 1
+tray-background = ${colors.background}
+tray-offset-x=19%
+
+[module/decor-glyph]
+type = custom/text
+content-background = ${colors.background}
+content-foreground = ${colors.inactive}
+
+[module/left-start]
+inherit = module/decor-glyph
+content = "%{T2}%{T-}"
+
+[module/left-stop]
+inherit = module/decor-glyph
+content = "%{T2}%{T-}"
+
+[module/right-start]
+inherit = module/decor-glyph
+content = "%{T2}%{T-}"
+
+[module/right-stop]
+inherit = module/decor-glyph
+content = "%{T2}%{T-}"
+
+
+[module/decor-glyph-active]
+type = custom/text
+content-background = ${colors.inactive}
+content-foreground = ${colors.active}
+
+[module/left-start-active]
+inherit = module/decor-glyph-active
+content = "%{T2}%{T-}"
+
+[module/left-stop-active]
+inherit = module/decor-glyph-active
+content = "%{T2}%{T-}"
+
+[module/right-start-active]
+inherit = module/decor-glyph-active
+content = "%{T2}%{T-}"
+
+[module/right-stop-active]
+inherit = module/decor-glyph-active
+content = "%{T2}%{T-}"
+
+
+[module/decor-glyph-hide]
+type = custom/text
+content-background = #00000000
+content-foreground = ${colors.inactive}
+
+[module/left-start-hide]
+inherit = module/decor-glyph-hide
+content = "%{T2}%{T-}"
+
+[module/left-stop-hide]
+inherit = module/decor-glyph-hide
+content = "%{T2}%{T-}"
+
+[module/right-start-hide]
+inherit = module/decor-glyph-hide
+content = "%{T2}%{T-}"
+
+[module/right-stop-hide]
+inherit = module/decor-glyph-hide
+content = "%{T2}%{T-}"
+
+
+[module/xwindow]
+type = internal/xwindow
+format-background = ${colors.inactive}
+format-padding = 1
+label = %title:0:50: ...%
+
+[module/i3]
+type = internal/i3
+format = <label-mode><label-state>
+index-sort = true
+wrapping-scroll = false
+fuzzy-matching = true
+
+; Only show workspaces on the same output as the bar
+pin-workspaces = true
+
+label-mode-padding = 1
+label-mode-foreground = ${colors.foreground}
+label-mode-background = ${colors.highlight}
+
+label-focused-background = ${colors.active}
+label-focused-padding = 1
+
+label-unfocused-padding = 1
+label-unfocused-background = ${colors.inactive}
+
+label-visible-background = ${colors.highlight}
+label-visible-padding = 1
+
+label-urgent-background = ${colors.highlight}
+label-urgent-padding = 1
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+
+; Available tags:
+;   <label> (default)
+;   <bar-load>
+;   <ramp-load>
+;   <ramp-coreload>
+format-background = ${colors.inactive}
+format-padding = 1
+format = <ramp-coreload>
+
+; Available tokens:
+;   %percentage% (default) - total cpu load averaged over all cores
+;   %percentage-sum% - Cumulative load on all cores
+;   %percentage-cores% - load percentage for each core
+;   %percentage-core[1-9]% - load percentage for specific core
+label-padding = 0
+label = %percentage-cores%
+; label-background = ${colors.inactive}
+
+; Spacing between individual per-core ramps
+ramp-coreload-spacing = 0
+ramp-coreload-0 = ▁
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆
+ramp-coreload-6 = ▇
+ramp-coreload-7 = █
+ramp-coreload-0-background = ${colors.inactive}
+ramp-coreload-1-background = ${colors.inactive}
+ramp-coreload-2-background = ${colors.inactive}
+ramp-coreload-3-background = ${colors.inactive}
+ramp-coreload-4-background = ${colors.inactive}
+ramp-coreload-5-background = ${colors.inactive}
+ramp-coreload-6-background = ${colors.inactive}
+ramp-coreload-7-background = ${colors.inactive}
+ramp-coreload-0-foreground = ${colors.foreground}
+ramp-coreload-1-foreground = ${colors.foreground}
+ramp-coreload-2-foreground = ${colors.foreground}
+ramp-coreload-3-foreground = ${colors.foreground}
+ramp-coreload-4-foreground = ${colors.foreground}
+ramp-coreload-5-foreground = ${colors.foreground}
+ramp-coreload-6-foreground = ${colors.error}
+ramp-coreload-7-foreground = ${colors.error}
+
+
+[module/filesystem]
+type = internal/fs
+
+; Mountpoints to display
+mount-0 = /
+interval = 10
+fixed-values = true
+spacing = 2
+label-mounted-padding = 1
+format-mounted-background = ${colors.inactive}
+format-mounted = <label-mounted>
+label-mounted = %mountpoint%: %percentage_free%% of %total%
+
+[module/eth]
+type = internal/network
+interface = ens33
+interval = 3.0
+
+format-connected =  <label-connected>
+format-connected-padding = 1
+format-connected-background = ${colors.active}
+label-connected = %local_ip%:%downspeed:8% %upspeed:8%
+
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%Y-%m-%d-"
+time = %H_%M_%S
+
+format-padding = 1
+format-background = ${colors.inactive}
+
+label = %date%%time%
+
+[module/volume]
+type = internal/alsa
+
+format-volume = <ramp-volume> <label-volume>
+format-volume-padding = 1
+format-volume-background = ${colors.active}
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+ramp-volume-foreground = ${colors.foreground}
+
+format-muted-prefix = " "
+format-muted-foreground = ${colors.background}
+format-muted-background = ${colors.error}
+label-muted = MUTED
+format-muted-padding = 1
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 5
+margin-bottom = 0
+
+; vim:ft=dosini

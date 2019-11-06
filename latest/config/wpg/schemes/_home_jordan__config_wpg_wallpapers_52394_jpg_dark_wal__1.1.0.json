@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/jordan/.config/wpg/wallpapers/52394.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#202020",
+        "foreground": "#fff6a8",
+        "cursor": "#fff6a8"
+    },
+    "colors": {
+        "color0": "#202020",
+        "color1": "#b91e2e",
+        "color2": "#0b3452",
+        "color3": "#81957c",
+        "color4": "#356579",
+        "color5": "#909090",
+        "color6": "#2d2031",
+        "color7": "#f9bb80",
+        "color8": "#393939",
+        "color9": "#fe1830",
+        "color10": "#084470",
+        "color11": "#9dd38f",
+        "color12": "#3987a8",
+        "color13": "#cda8a8",
+        "color14": "#3d2444",
+        "color15": "#fff6a8"
+    }
+}
